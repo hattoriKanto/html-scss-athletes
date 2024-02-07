@@ -1,0 +1,72 @@
+.person {
+  transition: transform 300ms linear 1000ms;
+  transition: border-radius 300ms linear 0;
+  transition: background-color 300ms linear 0;
+
+  &--padding {
+    padding: 10px;
+  }
+
+  &__photo {
+    position: relative;
+  }
+
+  &__image {
+    display: block;
+    width: $imageSize;
+    height: $imageSize;
+    margin-bottom: 8px;
+    border-radius: 100%;
+
+    transition: border-radius 300ms linear 1000ms;
+  }
+
+  &__rank {
+    position: absolute;
+    top: ($imageSize / 2) - ($spanSize / 2);
+    right: 10px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: $spanSize;
+    height: $spanSize;
+    border-radius: 100%;
+  
+    color: $spanColor;
+  }
+
+  &__details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 9px;
+  }
+
+  &__extra {
+    font-size: 18px;
+    font-weight: 400;
+
+    color: #000;
+
+    opacity: 0;
+  }
+
+  &:hover {
+    border-radius: 10px;
+
+    background-color: rgb(238, 238, 238);
+
+    transform: scale(1.2);
+
+    .person {
+      &__extra {
+        opacity: 1;
+      }
+      &__image {
+        border-radius: 60px;
+      }
+    }
+  }
+}

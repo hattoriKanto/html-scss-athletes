@@ -1,0 +1,16 @@
+.people {
+  --gridColumnCount: 2;
+
+  &__container {
+    padding: 30px 35px;
+    display: grid;
+    grid-template-columns: repeat(var(--gridColumnCount), $columnSize);
+    place-items: center;
+    place-content: center;
+    gap: 40px 30px;
+
+    @media (min-width: 1000px) {
+      --gridColumnCount: 4;
+    }
+  }
+}
